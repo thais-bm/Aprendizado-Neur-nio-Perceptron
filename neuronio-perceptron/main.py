@@ -45,7 +45,7 @@ def run_part_two() -> None:
     print("=======================================")
     
     try:
-        dados = np.loadtxt("dados/data020262.txt") # <-- Exemplo: Equipe 3
+        dados = np.loadtxt("dados/data020262.txt")
     except ValueError:
         dados = np.load("dados/data020262.txt", allow_pickle=True).reshape(-1, 3)
         
