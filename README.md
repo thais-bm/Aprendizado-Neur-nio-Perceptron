@@ -56,13 +56,14 @@ O projeto é estruturado em três etapas principais:
 
 ## 🛠️ Tecnologias e Dependências
 
-O projeto é gerenciado através do [**uv**](https://docs.astral.sh/uv/), um gerenciador de pacotes e ambientes virtuais ultrarrápido para Python.
+O projeto é gerenciado através do [**uv**](https://docs.astral.sh/uv/), um gerenciador de pacotes e ambientes virtuais rápido para Python.
 
 - **Python:** $\ge 3.11$
 - **NumPy:** Operações vetoriais e matriciais obrigatórias (sem uso de laços/listas nativas para álgebra linear).
 - **Matplotlib:** Geração das fronteiras de decisão, gráficos de dispersão e boxplots.
-- **Pandas:** Tabulação e manipulação de resultados consolidados.
 - **Scikit-Learn:** Exclusivamente para cálculo de métricas de desempenho e partições (`sklearn.metrics`, `train_test_split`).
+- **PrettyTable:** Organização de resultados e métricas em formato tabular limpo para relatórios.
+- **Numba:** Utilizado com o decorador `@njit` para compilação *Just-In-Time* (JIT), acelerando drasticamente o desempenho computacional dos laços de treinamento traduzindo-os para código de máquina.
 
 ---
 
@@ -102,8 +103,6 @@ uv run python main.py
 
 - **Abrir ambiente Jupyter Notebook / JupyterLab:**
 ```bash
-uv run --with jupyter jupyter lab
-# ou
 uv run --with jupyter jupyter notebook
 ```
 
@@ -122,7 +121,9 @@ uv run --with jupyter jupyter notebook
 ├── .python-version
 ├── pyproject.toml
 ├── uv.lock
-├── main.py
+├── neuron.py     # Implementação da classe do Neuronio
+├── main.py     # Versão script python dos experimentos
+├── projeto_perceptron.ipynb # Jupyter Notebook contendo os experimentos
 └── README.md
 ```
 
